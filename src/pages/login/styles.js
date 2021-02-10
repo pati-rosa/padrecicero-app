@@ -1,12 +1,10 @@
-import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
 import Constants from 'expo-constants';
 
-export default StyleSheet.create({
-    container: {
-        width: '100%', 
-        height: '100%', 
-        flex: 1, 
-        alignItems: 'center',
-        paddingTop: Constants.statusBarHeight + 80
-    }
-})
+export const StyledView = styled.View`
+    width: 100%;
+    height: 100%; 
+    flex: 1;
+    align-items: center;
+    padding-top: ${Constants.statusBarHeight + 100}px
+`

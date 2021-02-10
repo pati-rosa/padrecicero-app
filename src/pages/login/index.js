@@ -1,13 +1,15 @@
 import React from 'react';
-import { View } from 'react-native';
 
-import styles from './styles';
-import SelectEmployee from './components/selectEmployee/selectEmployee';
+import { StyledView } from './styles';
+
+import ImageLogo from './components/imageLogo'
+import SelectEmployee from './components/selectEmployee';
 
 export default function login() {
     return(
-        <View style={styles.container}>
+        <StyledView>
+            <ImageLogo />
             <SelectEmployee />
-        </View>
+        </StyledView>
     )
 }
