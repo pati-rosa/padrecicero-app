@@ -1,25 +1,12 @@
-import CounterStore from '../stores/counter';
 import React from 'react';
-import { Button, Text , View} from 'react-native';
+import { Text , View} from 'react-native';
+import { useStoreState } from 'easy-peasy';
 
 export default function Main() {
-  // Access the store's state via the hook
-  //                              👇
-  const count = CounterStore.useStoreState((state) => state.count);
-
-  const increment = CounterStore.useStoreActions(
-    (actions) => actions.increment,
-  );
-
-  const handlePress = () => {
-      console.log('Clicked');
-    //   increment();
-  }
-
+const { name, courses } = useStoreState((store) => store);
   return (
       <View>
-          <Text>Current count is: {count}</Text>
-          <Button onPress={increment} title="mais"/>
+          <Text>Current count is: { name } </Text>
       </View>
   )
 }

@@ -3,16 +3,16 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 // import productStore from './src/stores/store';
-import CounterStore from './src/stores/counter';
 import Main from './src/components/main';
 import { StoreProvider } from 'easy-peasy';
+import store from './src/stores/store';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <CounterStore.Provider>
+      <StoreProvider store={store} >
         <Main />
-      </CounterStore.Provider>
+      </StoreProvider>
     </View>
   );
 }
