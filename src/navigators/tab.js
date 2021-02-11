@@ -24,14 +24,14 @@ export default function TabNavigator() {
         />
         <Tab.Screen name="Executar Venda" component={RegisterSale} 
         options={{
-          tabBarLabel: 'Cadastrar Produto',
+          tabBarLabel: 'Executar Venda',
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons name="attach-money" color={color} size={size} />
           ),
         }}/>
         <Tab.Screen name="Listar Vendas" component={ListSale} 
         options={{
-          tabBarLabel: 'Cadastrar Produto',
+          tabBarLabel: 'Listar Vendas',
           tabBarIcon: ({ color, size }) => (
           <Feather name="list" color={color} size={size} /> 
           ),
