@@ -11,7 +11,7 @@ export default function login({ navigation }) {
         <Container>
             <ImageLogo />
             <SelectEmployee />
-            <IconButton value="Entrar" onPress={ () => navigation.navigate('tabNavigator')}/>
+            <IconButton value="Entrar" onPress={ () => navigation.navigate('TabNavigator')}/>
         </Container>
     )
 }

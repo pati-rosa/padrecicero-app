@@ -2,10 +2,9 @@ import React from 'react';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import RegisterProduct from '../../pages/registerProduct';
-import RegisterSale from '../../pages/registerSale';
-import ListSale from '../../pages/listSales';
-
+import RegisterProduct from '../pages/registerProduct';
+import RegisterSale from '../pages/registerSale';
+import ListSale from '../pages/listSales';
 
 const Tab = createBottomTabNavigator();
 
