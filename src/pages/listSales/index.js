@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Button } from 'react-native';
 import axios from 'axios';
 
+import { Container } from './styles';
 import { apiUrl } from '../../services';
 import TabTitle from "../../components/tabTitle";
 
@@ -18,11 +19,11 @@ export default function ListSale() {
 
     }
     return (
-        <View style={{ display: 'flex', flexDirection: 'column', backgroundColor: 'red', padding: 5 }}>
+        <Container>
             <TabTitle title="LISTAR VENDAS" />
             <Button title="LIST"
                 onPress={handlePress}
             />
-        </View>
+        </Container>
     );
 }
