@@ -4,7 +4,7 @@ import { Container } from './styles';
 import ImageLogo from './components/imageLogo';
 import SelectEmployee from './components/selectEmployee';
 import IconButton from './components/iconButton';
-import RestaurantTitle from '../../components/restaurantTitle';
+import RestaurantTitle from './components/restaurantTitle';
 
 export default function login({ navigation }) {
     return(
