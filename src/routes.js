@@ -13,7 +13,7 @@ export default function AuthRoutes() {
     return (
         <View style={{ width: '100%', height: '100%' }}>
             <AuthStack.Navigator>
-                <AuthStack.Screen name="login" component={Login} options={{ headerShown: false }} />
+                <AuthStack.Screen name="login" component={Login} />
                 <AuthStack.Screen name="registerProduct" component={RegisterProduct} />
                 <AuthStack.Screen name="registerSale" component={RegisterSale} />
                 <AuthStack.Screen name="listSale" component={ListSale} />
@@ -21,3 +21,5 @@ export default function AuthRoutes() {
         </View>
     );
 }
+
+// options={{ headerShown: false }}
