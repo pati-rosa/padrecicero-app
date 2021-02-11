@@ -1,15 +1,17 @@
 import React from 'react';
-
-import { StyledView } from './styles';
+import { Button } from 'react-native';
+import { Container } from './styles';
 
 import ImageLogo from './components/imageLogo'
 import SelectEmployee from './components/selectEmployee';
+import IconButton from './components/iconButton'
 
 export default function login() {
     return(
-        <StyledView>
+        <Container>
             <ImageLogo />
             <SelectEmployee />
-        </StyledView>
+            <IconButton/>
+        </Container>
     )
 }
