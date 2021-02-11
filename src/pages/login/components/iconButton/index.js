@@ -1,16 +1,18 @@
 import React from 'react';
-import { View, Button } from 'react-native';
+import { Button } from 'react-native';
 import styled from 'styled-components/native';
 
 const Container = styled.View`
     width: 300px;
 `
 
-export default function IconButton() {
+export default function IconButton(props) {
 
     return (
         <Container>
-            <Button title="ENTRAR"/>
+            <Button title={props.value}
+                    onPress={props.onPress}
+            />
         </Container>
         
     )

@@ -11,7 +11,7 @@ export default function login() {
         <Container>
             <ImageLogo />
             <SelectEmployee />
-            <IconButton/>
+            <IconButton value="Entrar" />
         </Container>
     )
 }
