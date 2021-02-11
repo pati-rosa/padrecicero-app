@@ -1,16 +1,14 @@
 import React from 'react';
-import { View} from 'react-native';
 
-import StoreEmployee from '../../components/storeEmployee';
+import { useStoreState } from 'easy-peasy';
+import { Title, Container, HeaderEmployee } from './styles';
 
-import { StyledText, StyledView } from './styles';
 export default function TabTitle(props) {
-    return(
-        <View>
-            <StoreEmployee />
-            <StyledView>
-                <StyledText>{props.title}</StyledText>
-            </StyledView>
-        </View>
+    const { name, courses } = useStoreState((store) => store);
+    return (
+        <Container>
+            <HeaderEmployee>Funcionário: { name } </HeaderEmployee>
+            <Title>{props.title}</Title>
+        </Container>
     );
 }
