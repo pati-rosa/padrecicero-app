@@ -1,10 +1,12 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
-export default function ListSale() {
+import TabTitle from "../../components/tabTitle";
+
+export default function RegisterSale() {
     return(
         <View>
-            <Text>REGISTRA VENDAS VENDAS</Text>
+            <TabTitle title="EXECUTAR VENDA" />
         </View>
     );
 }

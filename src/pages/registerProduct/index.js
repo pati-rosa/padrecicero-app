@@ -1,13 +1,12 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-
-import StoreEmployee from '../../components/storeEmployee';
+import { View } from 'react-native';
 
 import TabTitle from "../../components/tabTitle";
+
 export default function RegisterProduct() {
     return(
         <View>
-            <TabTitle title="REGISTRAR PRODUTO" />
+            <TabTitle title="CADASTRAR PRODUTO" />
         </View>
     );
 }
