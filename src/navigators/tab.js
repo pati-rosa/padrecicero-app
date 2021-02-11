@@ -11,9 +11,9 @@ const Tab = createBottomTabNavigator();
 export default function TabNavigator() {
   return (
       <Tab.Navigator>
-        <Tab.Screen name="RegisterProduct" component={RegisterProduct} />
-        <Tab.Screen name="RegisterSale" component={RegisterSale} />
-        <Tab.Screen name="ListSale" component={ListSale} />
+        <Tab.Screen name="Cadastrar Produto" component={RegisterProduct} />
+        <Tab.Screen name="Executar Venda" component={RegisterSale} />
+        <Tab.Screen name="Listar Vendas" component={ListSale} />
       </Tab.Navigator>
   );
 }

@@ -6,7 +6,7 @@ import styled from 'styled-components/native';
 const Input = styled.TextInput`
   margin: 5px 7px 2px;
   padding: 5px;
-  border: 2px solid palevioletred;
+  border: 2px solid #CC7A37;
   border-radius: 3px;
   width: 300px;
 
@@ -23,8 +23,6 @@ export default function selectEmployee() {
   return (
       <View>
           <Input placeholder="Nome do funcionário"/>
-          <Title>Current count is: { name } </Title>
-
       </View>
       
   )
