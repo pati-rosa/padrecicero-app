@@ -4,7 +4,7 @@ import { Table, TableWrapper, Row, Cell } from 'react-native-table-component';
 import axios from 'axios';
 import { useStoreState } from 'easy-peasy';
 
-import TabTitle from "../../components/tabTitle";
+import TopTitle from '../../components/topTitle';
 
 import { apiUrl } from '../../services';
 
@@ -36,7 +36,7 @@ export default function RegisterSale() {
 
   return (
     <View style={styles.container}>
-      <TabTitle title="Executar vendas" />
+      <TopTitle title="Executar vendas" />
       <ScrollView style={styles.dataWrapper}>
         <Table borderStyle={{ borderWidth: 2, borderColor: '#c8e1ff' }}>
           <Row data={['Produto', 'descrição', 'preço', 'Adicionar']} style={styles.head} textStyle={styles.text} />

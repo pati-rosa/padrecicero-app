@@ -3,12 +3,12 @@ import { TextInput, Text, Alert } from 'react-native';
 import axios from 'axios';
 import { useStoreActions, useStoreState } from 'easy-peasy';
 
-import { apiUrl } from '../../services';
-
-import TabTitle from '../../components/tabTitle';
+import TopTitle from '../../components/topTitle';
 import SelectCategory from '../../components/selectCategory';
 import IconButton from '../../components/iconButton';
 import { ContainerInput, Container } from './styles';
+
+import { apiUrl } from '../../services';
 
 export default function RegisterProduct() {
     const { category } = useStoreState((store) => store);
@@ -50,7 +50,7 @@ export default function RegisterProduct() {
     return (
 
         <Container>
-            <TabTitle title="Cadastrar Produto" />
+            <TopTitle title="Cadastrar Produto" />
             <SelectCategory />
             <Text>Nome do produto</Text>
             <ContainerInput >

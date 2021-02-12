@@ -3,7 +3,7 @@ import { StyleSheet, View, ScrollView  } from 'react-native';
 import axios from 'axios';
 import { Table, Row, Rows } from 'react-native-table-component';
 
-import TabTitle from "../../components/tabTitle";
+import TopTitle from '../../components/topTitle';
 
 import { apiUrl } from '../../services';
 
@@ -22,7 +22,7 @@ export default function ListSale() {
 
     return (
       <View style={styles.container}>
-        <TabTitle title="Listar vendas" />
+        <TopTitle title="Listar vendas" />
         <ScrollView style={styles.dataWrapper}>
             <Table borderStyle={{borderWidth: 2, borderColor: '#c8e1ff'}}>
             <Row data={['Produto', 'Descrição', 'Preço', 'Quantidade']} style={styles.head} textStyle={styles.text}/>
