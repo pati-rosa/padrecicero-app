@@ -21,13 +21,15 @@ export default function RegisterProduct() {
 
 
     function handlePress(){
-        try{
-            axios.post(`${apiUrl}/product/`, { category: `${category._id}`, name:`${product}`, description:`${description}`, price: `${price}` })
-            Alert.alert(`Produto cadastrado`);
-
-        }catch{
-
-        }
+        axios.post(`${apiUrl}/product/`, { category: `${category._id}`, name:`${product}`, description:`${description}`, price: `${price}` })
+        .then((request,response) => {Alert.alert(`Produto cadastrado`);}, 
+            (error) => { if(error.response.data.error == 'Register product failed')
+                            Alert.alert(`Produto inválido`)
+                        if(error.response.data.error == 'Product already exists')
+                            Alert.alert(`Produto já cadastrado no sistema`)
+                        console.log(error.response.data.error)
+                       } 
+        )
     }
     function handleProduct(product) {
         setProduct(product)
