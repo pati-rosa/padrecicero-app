@@ -22,7 +22,14 @@ export default function RegisterSale() {
   const _alertIndex = (data, index) => {
     console.log(data);
 
-    Alert.alert(`This is row ${index + 1}`);
+    Alert.alert(`Produto adicionado`);
+
+    try{
+        axios.post(`${apiUrl}/sale/`, { product: `${data}`, quantity: 1})
+    }catch(error){
+        console.log(error)
+    }
+    
   }
 
   const element = (data, index) => (
