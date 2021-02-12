@@ -6,6 +6,7 @@ import { useStoreState } from 'easy-peasy';
 
 import TopTitle from '../../components/topTitle';
 
+import { Container } from './styles';
 import { apiUrl } from '../../services';
 
 export default function RegisterSale() {
@@ -35,11 +36,11 @@ export default function RegisterSale() {
   );
 
   return (
-    <View style={styles.container}>
+    <Container>
       <TopTitle title="Executar vendas" />
       <ScrollView style={styles.dataWrapper}>
         <Table borderStyle={{ borderWidth: 2, borderColor: '#c8e1ff' }}>
-          <Row data={['Produto', 'descrição', 'preço', 'Adicionar']} style={styles.head} textStyle={styles.text} />
+          <Row data={['Produto', 'descrição', 'preço', 'Adicionar']} style={ { height: 40, backgroundColor: '#f1f8ff' }} textStyle={styles.text} />
           {
             products.map((product) => [product.name, product.description, product.price, product._id]).map((rowData, index) => (
               <TableWrapper key={index} style={styles.row}>
@@ -53,13 +54,11 @@ export default function RegisterSale() {
           }
         </Table>
       </ScrollView>
-    </View>
+    </Container>
   )
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 16, paddingTop: 10, backgroundColor: '#fff' },
-  head: { height: 40, backgroundColor: '#f1f8ff' },
   text: { margin: 6 },
   row: { flexDirection: 'row', backgroundColor: '#fff' },
   btn: { width: 58, height: 18, backgroundColor: '#78B7BB', borderRadius: 2 },
