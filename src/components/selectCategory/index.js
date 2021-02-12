@@ -31,7 +31,6 @@ export default function SelectCategory() {
                     setCategory(itemValue)
                 }>
                 {categories.map((category) => <Picker.Item label={category.name} value={category} key={category._id} />)}
-                {/* <Picker.Item label="Java" value="java" /> */}
             </Picker>
         </View>
     );
