@@ -1,29 +1,37 @@
-import React from 'react';
-import { View, Button } from 'react-native';
+import React, { useState, useEffect  } from 'react';
+import { StyleSheet, View, ScrollView  } from 'react-native';
 import axios from 'axios';
+import { Table, Row, Rows } from 'react-native-table-component';
 
-import { Container } from './styles';
 import { apiUrl } from '../../services';
-import TabTitle from "../../components/tabTitle";
+
 
 export default function ListSale() {
-    const handlePress = () => {
-        try {
-            axios.get(`${apiUrl}/sale/`)
-                .then(response => {
-                    console.log(response.data)
-                })
-        } catch (error) {
-            console.log(error)
-        }
+    const [products, setProducts] = useState([]);
 
-    }
+    useEffect(() => {
+        console.log('CARREGUEI DA API!');
+
+        axios.get(`${apiUrl}/product/`).then(response => {
+            setProducts(response.data.products);
+        })
+    }, []);
+    console.log(products.map((product) => [product.name, product.description]))
+
     return (
-        <Container>
-            <TabTitle title="LISTAR VENDAS" />
-            <Button title="LIST"
-                onPress={handlePress}
-            />
-        </Container>
-    );
+      <View style={styles.container}>
+        <ScrollView style={styles.dataWrapper}>
+            <Table borderStyle={{borderWidth: 2, borderColor: '#c8e1ff'}}>
+            <Row data={['Produto', 'descrição', 'preço', 'Adicionar']} style={styles.head} textStyle={styles.text}/>
+            <Rows data={products.map((product) => [product.name, product.description, product.price, 'add'])} textStyle={styles.text}/>
+            </Table>
+        </ScrollView>
+            
+      </View>
+    )
 }
+const styles = StyleSheet.create({
+    container: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff' },
+    head: { height: 40, backgroundColor: '#f1f8ff' },
+    text: { margin: 6 }
+  });
