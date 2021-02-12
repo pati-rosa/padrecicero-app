@@ -42,7 +42,6 @@ export default function RegisterProduct() {
                     } else if (error.response.data.error == 'Product already exists') {
                         Alert.alert(`Produto já cadastrado no sistema`)
                     }
-                    console.log(error.response.data.error)
                 }
             )
     }

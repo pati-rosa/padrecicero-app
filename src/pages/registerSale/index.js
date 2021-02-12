@@ -15,7 +15,6 @@ export default function RegisterSale() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    console.log('CARREGUEI DA API!');
 
     axios.get(`${apiUrl}/product/`).then(response => {
       setProducts(response.data.products);
@@ -38,9 +37,9 @@ export default function RegisterSale() {
   return (
     <Container>
       <TopTitle title="Executar vendas" />
-      <ScrollView style={styles.dataWrapper}>
-        <Table borderStyle={{ borderWidth: 2, borderColor: '#c8e1ff' }}>
-          <Row data={['Produto', 'descrição', 'preço', 'Adicionar']} style={ { height: 40, backgroundColor: '#f1f8ff' }} textStyle={styles.text} />
+      <ScrollView >
+        <Table borderStyle={styles.border}>
+          <Row data={['Produto', 'Descrição', 'Preço', 'Adicionar']} style={ styles.header} textStyle={styles.text} />
           {
             products.map((product) => [product.name, product.description, product.price, product._id]).map((rowData, index) => (
               <TableWrapper key={index} style={styles.row}>
@@ -59,8 +58,10 @@ export default function RegisterSale() {
 }
 
 const styles = StyleSheet.create({
+  border: { borderWidth: 2, borderColor: '#c8e1ff' },
+  header: { height: 40, backgroundColor: '#f1f8ff'},
   text: { margin: 6 },
   row: { flexDirection: 'row', backgroundColor: '#fff' },
-  btn: { width: 58, height: 18, backgroundColor: '#78B7BB', borderRadius: 2 },
+  btn: { width: 58, height: 18, backgroundColor: '#78B7BB', borderRadius: 2, alignItems: 'center', flex:1 },
   btnText: { textAlign: 'center', color: '#fff' }
 });

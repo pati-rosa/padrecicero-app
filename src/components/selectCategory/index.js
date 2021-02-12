@@ -13,7 +13,6 @@ export default function SelectCategory() {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        console.log('CARREGUEI DA API!');
 
         axios.get(`${apiUrl}/category/`).then(response => {
             setCategories(response.data.categories);

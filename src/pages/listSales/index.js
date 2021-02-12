@@ -13,21 +13,19 @@ export default function ListSale() {
     const [sales, setSales] = useState([]);
 
     useEffect(() => {
-        console.log('CARREGUEI DA API!');
 
         axios.get(`${apiUrl}/sale/`).then(response => {
             setSales(response.data.sales);
         })
     }, []);
-    console.log(sales.map((sale) => [sale.product.name, sale.product.description, sale.product.price, sale.quantity]))
 
     return (
       <Container>
         <TopTitle title="Listar vendas" />
         <ScrollView >
-            <Table borderStyle={{borderWidth: 2, borderColor: '#c8e1ff'}}>
-            <Row data={['Produto', 'Descrição', 'Preço', 'Quantidade']} style={{ height: 40, backgroundColor: '#f1f8ff' }} textStyle={{ margin: 6 }}/>
-            <Rows data={sales.map((sale) => [sale.product.name, sale.product.description, sale.product.price, sale.quantity])} textStyle={{ margin: 6 }}/>
+            <Table borderStyle={styles.border}>
+            <Row data={['Produto', 'Descrição', 'Preço', 'Quantidade']} style={styles.header} textStyle={styles.text}/>
+            <Rows data={sales.map((sale) => [sale.product.name, sale.product.description, sale.product.price, sale.quantity])} textStyle={styles.text}/>
             </Table>
         </ScrollView>
             
@@ -35,3 +33,12 @@ export default function ListSale() {
     )
 }
 
+
+const styles = StyleSheet.create({
+  border: { borderWidth: 2, borderColor: '#c8e1ff' },
+  header: { height: 40, backgroundColor: '#f1f8ff'},
+  text: { margin: 6 },
+  row: { flexDirection: 'row', backgroundColor: '#fff' },
+  btn: { width: 58, height: 18, backgroundColor: '#78B7BB', borderRadius: 2 },
+  btnText: { textAlign: 'center', color: '#fff' }
+});

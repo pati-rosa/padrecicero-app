@@ -14,5 +14,3 @@ export default function MainRoutes() {
         </MainStack.Navigator>
     );
 }
-
-// options={{ headerShown: false }}
