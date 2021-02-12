@@ -27,6 +27,7 @@
     "react-native-screens": "~2.15.2",
     "react-native-table-component": "^1.2.1",
     "react-native-web": "~0.13.12",
+    "react-table": "^7.6.3",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {

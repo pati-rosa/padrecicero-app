@@ -2,7 +2,6 @@ import React from 'react';
 import { Container } from './styles';
 
 import ImageLogo from './components/imageLogo';
-import SelectEmployee from './components/selectEmployee';
 import IconButtonLogin from './components/iconButton';
 import RestaurantTitle from './components/restaurantTitle';
 
