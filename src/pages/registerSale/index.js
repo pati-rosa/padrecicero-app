@@ -44,7 +44,7 @@ export default function RegisterSale() {
       <View style={styles.container}>
         <TabTitle title="Executar vendas" />
         <ScrollView style={styles.dataWrapper}>
-            <Table borderStyle={{borderColor: 'transparent'}}>
+            <Table borderStyle={{borderWidth: 2, borderColor: '#c8e1ff'}}>
             <Row data={['Produto', 'descrição', 'preço', 'Adicionar']} style={styles.head} textStyle={styles.text}/>
             {
                 products.map((product) => [product.name, product.description, product.price, product._id]).map((rowData, index) => (
@@ -64,10 +64,10 @@ export default function RegisterSale() {
   }
  
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff' },
-  head: { height: 40, backgroundColor: '#808B97' },
+  container: { flex: 1, padding: 16, paddingTop: 10, backgroundColor: '#fff' },
+  head: { height: 40, backgroundColor: '#f1f8ff' },
   text: { margin: 6 },
-  row: { flexDirection: 'row', backgroundColor: '#FFF1C1' },
+  row: { flexDirection: 'row', backgroundColor: '#fff' },
   btn: { width: 58, height: 18, backgroundColor: '#78B7BB',  borderRadius: 2 },
   btnText: { textAlign: 'center', color: '#fff' }
 });
