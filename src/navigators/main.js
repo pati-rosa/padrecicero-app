@@ -9,8 +9,10 @@ const MainStack = createStackNavigator();
 export default function MainRoutes() {
     return (
         <MainStack.Navigator>
-            <MainStack.Screen name="Login" component={Login} />
-            <MainStack.Screen name="TabNavigator" component={TabNavigator} />
+            <MainStack.Screen name="Login" component={Login}  options={{ headerShown: false }} />
+            <MainStack.Screen name="Sistema de gerenciamento" component={TabNavigator} />
         </MainStack.Navigator>
     );
 }
+
+// options={{ headerShown: false }}

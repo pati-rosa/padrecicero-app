@@ -10,7 +10,7 @@ export default function login({ navigation }) {
         <Container>
             <RestaurantTitle/>
             <ImageLogo />
-            <IconButtonLogin value="Entrar" onPress={ () => navigation.navigate('TabNavigator')}/>
+            <IconButtonLogin value="Entrar" onPress={ () => navigation.navigate('Sistema de gerenciamento')}/>
         </Container>
     )
 }
