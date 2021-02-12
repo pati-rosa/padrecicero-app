@@ -11,7 +11,6 @@ export default function login({ navigation }) {
         <Container>
             <RestaurantTitle/>
             <ImageLogo />
-            <SelectEmployee />
             <IconButtonLogin value="Entrar" onPress={ () => navigation.navigate('TabNavigator')}/>
         </Container>
     )
