@@ -1,9 +1,17 @@
 import styled from 'styled-components/native';
 
-
 export const Container = styled.View`
-    display: flex;
-    flexDirection: column; 
-    backgroundColor: #FFFF;
-    padding: 5px;
+    flex: 1;
+    padding: 16px;
+    paddingTop: 10px;
+    backgroundColor: #fff;
+
 `
+
+// export const text = styled.Text`
+//     flex: 1;
+//     padding: 16px;
+//     paddingTop: 10px;
+//     backgroundColor: #fff;
+
+// `

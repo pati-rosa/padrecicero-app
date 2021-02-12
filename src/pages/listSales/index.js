@@ -7,6 +7,7 @@ import TopTitle from '../../components/topTitle';
 
 import { apiUrl } from '../../services';
 
+import { Container } from './styles';
 
 export default function ListSale() {
     const [sales, setSales] = useState([]);
@@ -21,7 +22,7 @@ export default function ListSale() {
     console.log(sales.map((sale) => [sale.product.name, sale.product.description, sale.product.price, sale.quantity]))
 
     return (
-      <View style={styles.container}>
+      <Container>
         <TopTitle title="Listar vendas" />
         <ScrollView style={styles.dataWrapper}>
             <Table borderStyle={{borderWidth: 2, borderColor: '#c8e1ff'}}>
@@ -30,7 +31,7 @@ export default function ListSale() {
             </Table>
         </ScrollView>
             
-      </View>
+      </Container>
     )
 }
 const styles = StyleSheet.create({
