@@ -1,22 +1,17 @@
 import React from 'react';
 import { Button } from 'react-native';
-import styled from 'styled-components/native';
 
-const ButtonSection = styled.View`
-    width: 300px;
-    margin: 20px;
-
-`
+import { Container } from './styles';
 
 export default function IconButton(props) {
 
     return (
-        <ButtonSection>
+        <Container>
             <Button title={props.value}
                     onPress={props.onPress}
                     color="#CC7A37"
             />
-        </ButtonSection>
+        </Container>
         
     )
   }
