@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Picker, pickerSelectStyles } from '@react-native-picker/picker';
+import { View, Text } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
 import axios from 'axios';
 
 import { apiUrl } from '../../services';
@@ -22,7 +22,8 @@ export default function SelectCategory() {
 
 
     return (
-        <View>
+        <View style={{ 'flex-direction': 'row' }}>
+            <Text> Selecionar Categoria</Text>
             <Picker
                 selectedValue={selectedCategory}
                 style={{ width: 300, color: "#1A110F" }}
