@@ -6,7 +6,7 @@ import { useStoreActions, useStoreState } from 'easy-peasy';
 import TopTitle from '../../components/topTitle';
 import SelectCategory from '../../components/selectCategory';
 import IconButton from '../../components/iconButton';
-import { ContainerInput, Container } from './styles';
+import { ContainerInput, Container, StyleInput } from './styles';
 
 import { apiUrl } from '../../services';
 
@@ -53,7 +53,7 @@ export default function RegisterProduct() {
             <SelectCategory />
             <Text>Nome do produto</Text>
             <ContainerInput >
-                <TextInput
+                <StyleInput
                     placeholder="Escolher nome do produto"
                     onChangeText={handleNameChange}
                     defaultValue={name}
@@ -62,7 +62,7 @@ export default function RegisterProduct() {
             </ContainerInput>
             <Text>Preço</Text>
             <ContainerInput >
-                <TextInput
+                <StyleInput
                     placeholder="Escolher preço do produto"
                     onChangeText={handlePriceChange}
                     defaultValue={price}
@@ -70,7 +70,7 @@ export default function RegisterProduct() {
             </ContainerInput>
             <Text>Descrição</Text>
             <ContainerInput >
-                <TextInput
+                <StyleInput
                     placeholder="Escolher descrição do produto"
                     onChangeText={handleDescriptionChange}
                     defaultValue={description}

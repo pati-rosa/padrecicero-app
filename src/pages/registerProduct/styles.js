@@ -9,7 +9,12 @@ export const Container = styled.View`
 ` 
 export const ContainerInput = styled.View`
     width:300px;
+    margin-top: 5px;
     margin-bottom:20px;
     background-color:#F3F3F3;
 
+` 
+
+export const StyleInput = styled.TextInput`
+   padding:3px;
 ` 

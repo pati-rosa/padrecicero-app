@@ -14,6 +14,7 @@ export default function IconButtonLogin(props) {
             <Button title={props.value}
                     onPress={props.onPress}
                     color="#CC7A37"
+                    
             />
         </Container>
         
