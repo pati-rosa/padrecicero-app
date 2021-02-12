@@ -21,7 +21,6 @@ export default function RegisterProduct() {
     console.log('REGISTER PRODUCT', category?._id);
 
     const [text, setText] = useState('');
-    console.log(text);
 
     function handlePress(){
         try{
@@ -36,10 +35,10 @@ export default function RegisterProduct() {
         
         <View>
             <TabTitle title="CADASTRAR PRODUTO" />
-            <View style = {{ backgroundColor: 'red', padding: 20, margin:20}}>
+            <View style = {{ padding: 20, margin:20}}>
                 <SelectCategory />
             </View>
-            <View style = {{ backgroundColor: 'red', padding: 20, margin:20}}> 
+            <View style = {{ padding: 20, margin:20}}> 
                 <Text>Selecionar nome do produto</Text>   
                 <TextInput  
                 placeholder="Escolher nome do produto"
