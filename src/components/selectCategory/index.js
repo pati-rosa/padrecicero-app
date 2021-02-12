@@ -2,15 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { View, Text } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import axios from 'axios';
+import { useStoreActions, useStoreState } from 'easy-peasy';
 
 import { apiUrl } from '../../services';
 
 
 export default function SelectCategory() {
-    const [selectedCategory, setSelectedCategory] = useState();
-    const [categories, setCategories] = useState([]);
+    const { category } = useStoreState((store) => store);
+    const { setCategory } = useStoreActions((store) => store);
 
-    console.log('SELECTED CATEGORY: ', selectedCategory);
+    const [categories, setCategories] = useState([]);
 
     useEffect(() => {
         console.log('CARREGUEI DA API!');
@@ -20,15 +21,14 @@ export default function SelectCategory() {
         })
     }, []);
 
-
     return (
         <View style={{ 'flex-direction': 'row' }}>
             <Text> Selecionar Categoria</Text>
             <Picker
-                selectedValue={selectedCategory}
+                selectedValue={category}
                 style={{ width: 300, color: "#1A110F" }}
                 onValueChange={(itemValue) =>
-                    setSelectedCategory(itemValue)
+                    setCategory(itemValue)
                 }>
                 {categories.map((category) => <Picker.Item label={category.name} value={category} key={category._id} />)}
                 {/* <Picker.Item label="Java" value="java" /> */}
