@@ -6,7 +6,6 @@ import { useStoreActions, useStoreState } from 'easy-peasy';
 
 import { apiUrl } from '../../services';
 
-
 export default function SelectCategory() {
     const { category } = useStoreState((store) => store);
     const { setCategory } = useStoreActions((store) => store);
