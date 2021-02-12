@@ -7,23 +7,23 @@ import { apiUrl } from '../../services';
 
 
 export default function ListSale() {
-    const [products, setProducts] = useState([]);
+    const [sales, setSales] = useState([]);
 
     useEffect(() => {
         console.log('CARREGUEI DA API!');
 
-        axios.get(`${apiUrl}/product/`).then(response => {
-            setProducts(response.data.products);
+        axios.get(`${apiUrl}/sale/`).then(response => {
+            setSales(response.data.sales);
         })
     }, []);
-    console.log(products.map((product) => [product.name, product.description]))
+    console.log(sales.map((sale) => [sale.product, sale.quantity]))
 
     return (
       <View style={styles.container}>
         <ScrollView style={styles.dataWrapper}>
             <Table borderStyle={{borderWidth: 2, borderColor: '#c8e1ff'}}>
-            <Row data={['Produto', 'descrição', 'preço', 'Adicionar']} style={styles.head} textStyle={styles.text}/>
-            <Rows data={products.map((product) => [product.name, product.description, product.price, 'add'])} textStyle={styles.text}/>
+            <Row data={['Produto', 'Quantidade']} style={styles.head} textStyle={styles.text}/>
+            <Rows data={sales.map((sale) => [sale.product, sale.quantity])} textStyle={styles.text}/>
             </Table>
         </ScrollView>
             
