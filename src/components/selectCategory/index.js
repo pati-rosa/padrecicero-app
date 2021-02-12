@@ -22,7 +22,7 @@ export default function SelectCategory() {
     }, []);
 
     return (
-        <View style={{ 'flex-direction': 'row' }}>
+        <View>
             <Text> Selecionar Categoria</Text>
             <Picker
                 selectedValue={category}

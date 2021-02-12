@@ -1,60 +1,80 @@
 import React, {useState} from 'react';
-import { View, TextInput,Text, Button} from 'react-native';
-import styled from 'styled-components/native';
+import { View, TextInput,Text } from 'react-native';
 import axios from 'axios';
-
-import { apiUrl } from '../../services';
-import TabTitle from '../../components/tabTitle';
-import SelectCategory from '../../components/selectCategory';
 import { useStoreState } from 'easy-peasy';
 
+import { apiUrl } from '../../services';
 
-const ButtonSection = styled.View`
-    width: 300px;
-    margin: 20px;
-
-` 
+import TabTitle from '../../components/tabTitle';
+import SelectCategory from '../../components/selectCategory';
+import IconButton from '../../components/iconButton';
+import { ContainerInput } from './styles';
 
 export default function RegisterProduct() {
     const { category } = useStoreState((store) => store);
 
     console.log('REGISTER PRODUCT', category?._id);
 
-    const [text, setText] = useState('');
+    const [product, setProduct] = useState('');
+    const [price, setPrice] = useState('');
+    const [description, setDescription] = useState('');
 
     function handlePress(){
         try{
-            axios.post(`${apiUrl}/product/`, { category: `${category._id}`, name:`${text}`, description:"abobrinha", price: 1.8 })
+            axios.post(`${apiUrl}/product/`, { category: `${category._id}`, name:`${product}`, description:`${description}`, price: `${price}` })
 
         }catch{
 
         }
     }
+    function handleProduct(product) {
+        setProduct(product)
+    }
+    function handlePrice(price) {
+        setPrice(price)
+    }
+    function handleDescription(description) {
+        setDescription(description)
+    }
 
     return(
         
-        <View>
+        <View style={{flex:1, alignItems: 'flex-start', margin: 30}}>
             <TabTitle title="CADASTRAR PRODUTO" />
-            <View style = {{ padding: 20, margin:20}}>
+            <ContainerInput>
                 <SelectCategory />
-            </View>
-            <View style = {{ padding: 20, margin:20}}> 
-                <Text>Selecionar nome do produto</Text>   
+            </ContainerInput>
+            <ContainerInput > 
+                <Text>Nome do produto</Text>   
                 <TextInput  
                 placeholder="Escolher nome do produto"
-                placeholderTextColor="#A9A9A9"
-                onChangeText={text => setText(text)}
-                defaultValue={text}
-
+                onChangeText={handleProduct}
+                defaultValue={product}
+                placeholderTextColor="#A9A9A9" 
                 />
-            </View>
-            <ButtonSection>
-                <Button 
-                title="Cadastrar"
-                onPress={handlePress}
-                color="#CC7A37"/>
-            </ButtonSection>
+            </ContainerInput>
+            <ContainerInput > 
+                <Text>Preço</Text>   
+                <TextInput  
+                placeholder="Escolher nome do produto"
+                onChangeText={handlePrice}
+                defaultValue={price}
+                />
+            </ContainerInput>
+            <ContainerInput > 
+                <Text>Descrição</Text>   
+                <TextInput  
+                placeholder="Escolher descrição do produto"
+                onChangeText={handleDescription}
+                defaultValue={description}
+                />
+            </ContainerInput>
+            <IconButton 
+            value="Cadastrar" 
+            onPress={handlePress}
             
+            />
+          
         </View>
     );
     
