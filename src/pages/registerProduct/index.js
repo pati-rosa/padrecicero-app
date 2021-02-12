@@ -18,14 +18,14 @@ const ButtonSection = styled.View`
 export default function RegisterProduct() {
     const { category } = useStoreState((store) => store);
 
-    console.log('REGISTER PRODUCT', category.name);
+    console.log('REGISTER PRODUCT', category?._id);
 
     const [text, setText] = useState('');
     console.log(text);
 
     function handlePress(){
         try{
-            axios.post(`${apiUrl}/product/`, { category: `${SelectCategory.category}`})
+            // axios.post(`${apiUrl}/product/`, { category: `${SelectCategory.category}`})
 
         }catch{
 
