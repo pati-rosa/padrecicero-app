@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { View, TextInput,Text, StyleSheet } from 'react-native';
+import { TextInput,Text, Alert } from 'react-native';
 import axios from 'axios';
 import { useStoreState } from 'easy-peasy';
 
@@ -19,9 +19,11 @@ export default function RegisterProduct() {
     const [price, setPrice] = useState('');
     const [description, setDescription] = useState('');
 
+
     function handlePress(){
         try{
             axios.post(`${apiUrl}/product/`, { category: `${category._id}`, name:`${product}`, description:`${description}`, price: `${price}` })
+            Alert.alert(`Produto cadastrado`);
 
         }catch{
 
