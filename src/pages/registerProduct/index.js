@@ -25,7 +25,7 @@ export default function RegisterProduct() {
 
     function handlePress(){
         try{
-            // axios.post(`${apiUrl}/product/`, { category: `${SelectCategory.category}`})
+            axios.post(`${apiUrl}/product/`, { category: `${category._id}`, name:`${text}`, description:"abobrinha", price: 1.8 })
 
         }catch{
 
