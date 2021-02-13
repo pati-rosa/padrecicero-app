@@ -4,13 +4,13 @@
 
 ## Como executar
 ```bash
-# Clone este repositório
+Clone este repositório
 $ git clone https://github.com/patirosa95/padrecicero-app.git
 
-# Instale as dependências
+Instale as dependências
 $ npm install
 
-# Inicie o serviço ()
+Inicie o serviço
 $ npm start
 
 # O servidor logo abrirá no Browser e você terá as opções de abrir o projeto em um emulador ou pelo aplicativo Expo
