@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Alert, ScrollView } from 'react-native';
 import { Table, TableWrapper, Row, Cell } from 'react-native-table-component';
 import axios from 'axios';
-import { useStoreState } from 'easy-peasy';
+import { useStoreState, useStoreActions } from 'easy-peasy';
 
 import TopTitle from '../../components/topTitle';
 
@@ -10,6 +10,7 @@ import { Container } from './styles';
 import { apiUrl } from '../../services';
 
 export default function RegisterSale() {
+  const { setLastAddedSale } = useStoreActions((store) => store);
   const { lastAddedProduct } = useStoreState((store) => store);
 
   const [products, setProducts] = useState([]);
@@ -23,7 +24,12 @@ export default function RegisterSale() {
 
   const handleSaleRegister = (data) => {
 
-    axios.post(`${apiUrl}/sale/`, { product: `${data}`, quantity: 1 }).then(() => Alert.alert(`Venda executada`))
+    axios.post(`${apiUrl}/sale/`, { product: `${data}`, quantity: 1 })
+    .then(() => {
+      setLastAddedSale(data);
+      Alert.alert(`Venda executada`)
+    })
+    console.log(data)
   }
 
   const element = (data) => (
