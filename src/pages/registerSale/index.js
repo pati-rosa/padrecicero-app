@@ -29,7 +29,7 @@ export default function RegisterSale() {
   const element = (data) => (
     <TouchableOpacity onPress={() => handleSaleRegister(data)}>
       <View style={styles.btn}>
-        <Text style={styles.btnText}>button</Text>
+        <Text style={styles.btnText}>+</Text>
       </View>
     </TouchableOpacity>
   );
