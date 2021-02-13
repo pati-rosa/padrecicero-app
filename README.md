@@ -1,7 +1,6 @@
 # Sistema Mobile do restaurante Padra Cícero
 
-## Descrição do Projeto
-<p align="center">Sistema de gerenciamento de vendas do restaurante Padra Cícero.</p>
+## Sistema de gerenciamento de vendas do restaurante Padra Cícero.
 
 ## Como executar
 ```bash
