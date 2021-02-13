@@ -23,7 +23,7 @@ export default function RegisterSale() {
 
   const handleSaleRegister = (data) => {
 
-    axios.post(`${apiUrl}/sale/`, { product: `${data}`, quantity: 1 }).then(() => Alert.alert(`Produto adicionado`))
+    axios.post(`${apiUrl}/sale/`, { product: `${data}`, quantity: 1 }).then(() => Alert.alert(`Venda executada`))
   }
 
   const element = (data) => (
