@@ -10,6 +10,7 @@ import { Container } from './styles';
 import { apiUrl } from '../../services';
 
 export default function RegisterSale() {
+    const { setLastAddedSale } = useStoreActions((store) => store);
   const { lastAddedProduct } = useStoreState((store) => store);
 
   const [products, setProducts] = useState([]);
@@ -24,10 +25,10 @@ export default function RegisterSale() {
   const handleSaleRegister = (data) => {
 
     axios.post(`${apiUrl}/sale/`, { product: `${data}`, quantity: 1 })
-    .then(() => {
-      Alert.alert(`Venda executada`)
+    .then((response) => {
+      Alert.alert(`Venda executada`);
+      setLastAddedSale(response.data.sale._id);
     })
-    console.log(data)
   }
 
   const element = (data) => (
