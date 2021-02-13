@@ -10,7 +10,6 @@ import { Container } from './styles';
 import { apiUrl } from '../../services';
 
 export default function RegisterSale() {
-  const { setLastAddedSale } = useStoreActions((store) => store);
   const { lastAddedProduct } = useStoreState((store) => store);
 
   const [products, setProducts] = useState([]);
@@ -26,7 +25,6 @@ export default function RegisterSale() {
 
     axios.post(`${apiUrl}/sale/`, { product: `${data}`, quantity: 1 })
     .then(() => {
-      setLastAddedSale(data);
       Alert.alert(`Venda executada`)
     })
     console.log(data)

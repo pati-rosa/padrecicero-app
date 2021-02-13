@@ -5,10 +5,6 @@ const store = createStore({
     setLastAddedProduct: action((state, payload) => {
         state.product = payload;
     }),
-    lastAddedSale: undefined,
-    setLastAddedSale: action((state, payload) => {
-        state.product = payload;
-    }),
     category: undefined,
     setCategory: action((state, payload) => {
         state.category = payload;

@@ -10,7 +10,6 @@ import { apiUrl } from '../../services';
 import { Container } from './styles';
 
 export default function ListSale() {
-    const { lastAddedSale } = useStoreState((store) => store);
     const [sales, setSales] = useState([]);
 
     useEffect(() => {
@@ -18,7 +17,7 @@ export default function ListSale() {
         axios.get(`${apiUrl}/sale/`).then(response => {
             setSales(response.data.sales);
         })
-    }, [lastAddedSale]);
+    }, []);
 
     return (
       <Container>
