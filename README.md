@@ -1,4 +1,4 @@
-# Sistema Mobile do restaurante Padra Cícero
+# Sistema Mobile do restaurante Padre Cícero
 
 ## Sistema de gerenciamento de vendas do restaurante Padra Cícero.
 
