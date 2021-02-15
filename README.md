@@ -24,5 +24,5 @@ $ npm start
 - [x] Execução de vendas
 - [x] Listagem das vendas
 - [ ] Cadastro de categorias (deve ser através de requisição POST)
-- [ ] Quantidade de produtos na execução de venas
+- [ ] Quantidade de produtos na execução de vendas
 
